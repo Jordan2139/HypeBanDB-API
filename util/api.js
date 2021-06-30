@@ -4,6 +4,10 @@ const { createConnection } = require('mysql')
 const con = createConnection(config["mysql"]);
 const app = express()
 
+// Made by Jordan.#2139 & Hyperz#0001
+// Made by Jordan.#2139 & Hyperz#0001
+// Made by Jordan.#2139 & Hyperz#0001
+
 module.exports = {
     async apistart(client) {
         app.listen(3017, null, null, () => console.log(`API is up and running on port 3017.`));
@@ -104,3 +108,7 @@ module.exports = {
         })
     }
 }
+
+// Made by Jordan.#2139 & Hyperz#0001
+// Made by Jordan.#2139 & Hyperz#0001
+// Made by Jordan.#2139 & Hyperz#0001
