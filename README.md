@@ -3,7 +3,7 @@
 ## How To Install To HypeBanDB (I won't support others, figure it out skid):
 * Download the `api.js` and `externalLoader.js` files
 * Drop the `api.js` file into the `util` folder
-* Simply replace your `externalLoader.js` with the one you downloaded (If you don't have one make sure you get the most updated version of the Ban DB from https://hyperz.zone)
+* Simply replace your `externalLoader.js` with the one you downloaded (If you don't have one make sure you get the most updated version of the Ban DB from https://hyperz.dev)
 * Start the bot as usual and enjoy the API
 
 ## API Usage
