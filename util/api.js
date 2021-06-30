@@ -96,8 +96,6 @@ module.exports = {
                         'name': row[0].name,
                         'autobans': row[0].autobans,
                         'autounbans': row[0].autounbans,
-                        'altprev': row[0].altprev,
-                        'altprevage': row[0].altprevage
                     })
                 } else {
                     res.send({
