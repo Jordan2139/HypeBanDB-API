@@ -21,7 +21,7 @@ module.exports = {
                 })
             })
             // Case Checking (Via case ID)
-        app.get(`/case-:caseID`, async function(req, res) {
+        app.get(`/cases/:caseID`, async function(req, res) {
                 res.set('Access-Control-Allow-Origin', '*');
                 const caseid = await req.params.caseID
                 con.query(`SELECT * FROM cases WHERE caseid="${caseid}"`, async(err, row) => {
@@ -43,7 +43,7 @@ module.exports = {
                 });
             })
             // Staff DB (see if user is staff on the bot)   
-        app.get(`/staff-:userID`, async function(req, res) {
+        app.get(`/staff/:userID`, async function(req, res) {
                 res.set('Access-Control-Allow-Origin', '*');
                 const userid = await req.params.userID
                 con.query(`SELECT * FROM staff WHERE userid="${userid}"`, async(err, row) => {
@@ -62,7 +62,7 @@ module.exports = {
                 });
             })
             // Ban viewing
-        app.get(`/bans-:userID`, async function(req, res) {
+        app.get(`/bans/:userID`, async function(req, res) {
                 res.set('Access-Control-Allow-Origin', '*');
                 const userid = await req.params.userID
                 con.query(`SELECT * FROM bannedusers WHERE userid="${userid}"`, async(err, row) => {
@@ -84,7 +84,7 @@ module.exports = {
                 });
             })
             // Guild viewing
-        app.get(`/guilds-:guildID`, async function(req, res) {
+        app.get(`/guilds/:guildID`, async function(req, res) {
             res.set('Access-Control-Allow-Origin', '*');
             const guildid = await req.params.guildID
             con.query(`SELECT * FROM guilds WHERE id="${guildid}"`, async(err, row) => {
@@ -105,7 +105,7 @@ module.exports = {
             });
         })
         // Report viewing
-        app.get("/report-:id", async (req, res) => {
+        app.get("/reports/:id", async (req, res) => {
             try {
                 const query = `SELECT * FROM reports WHERE uniqueid = ?`;
                 con.query(query, [req.params.id], (error, results) => {
@@ -123,7 +123,7 @@ module.exports = {
             }
         })
         // Appeal viewing
-        app.get("/appeal/:id", async (req, res) => {
+        app.get("/appeals/:id", async (req, res) => {
             try {
                 const query = `SELECT * FROM appeals WHERE uniqueid = ?`;
                 con.query(query, [req.params.id], (error, results) => {
@@ -141,7 +141,7 @@ module.exports = {
             }
         })
         // Logging channel viewing
-        app.get("/logging-:id", async (req, res) => {
+        app.get("/logging/:id", async (req, res) => {
             try {
                 const query = `SELECT * FROM loggingchannels WHERE guildid = ?`;
                 con.query(query, [req.params.id], (error, results) => {
