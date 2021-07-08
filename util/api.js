@@ -104,6 +104,61 @@ module.exports = {
                 }
             });
         })
+        // Report viewing
+        app.get("/report-:id", async (req, res) => {
+            try {
+                const query = `SELECT * FROM reports WHERE uniqueid = ?`;
+                con.query(query, [req.params.id], (error, results) => {
+                        if (!results[0]) {
+                            res.json({
+                                status: `404: There isn't a repport with the id of ${req.params.id}.`
+                            });
+                        } else {
+                            res.json(results[0]);
+                        }
+                        return;
+                })
+            } catch (err) {
+                console.log(err)
+            }
+        })
+        // Appeal viewing
+        app.get("/appeal/:id", async (req, res) => {
+            try {
+                const query = `SELECT * FROM appeals WHERE uniqueid = ?`;
+                con.query(query, [req.params.id], (error, results) => {
+                        if (!results[0]) {
+                            res.json({
+                                status: `404: There isn't a appeall with the id of ${req.params.id}.`
+                            });
+                        } else {
+                            res.json(results[0]);
+                        }
+                        return;
+                })
+            } catch (err) {
+                console.log(err)
+            }
+        })
+        // Logging channel viewing
+        app.get("/logging-:id", async (req, res) => {
+            try {
+                const query = `SELECT * FROM loggingchannels WHERE guildid = ?`;
+                con.query(query, [req.params.id], (error, results) => {
+                        if (!results[0]) {
+                            res.json({
+                                status: `404: There isn't a appeall with the id of ${req.params.id}.`
+                            });
+                        } else {
+                            res.json(results[0]);
+                        }
+                        return;
+
+                })
+            } catch (err) {
+                console.log(err)
+            }
+        })
     }
 }
 
