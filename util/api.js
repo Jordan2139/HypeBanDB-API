@@ -11,6 +11,10 @@ const app = express()
 module.exports = {
     async apistart(client) {
         app.listen(3017, null, null, () => console.log(`API is up and running on port 3017.`));
+        // Ready
+        app.get('/', (req, res) => {
+            res.json({ status: "The API is up and running on port 3017", MadeBy: "Jordan.#2139 & Hyperz#0001, With Some Help From JipyTheDev#0001"})
+        }) 
         // Statistics
         app.get('/stats', function(req, res) { // Stats api
                 res.set('Access-Control-Allow-Origin', '*');
